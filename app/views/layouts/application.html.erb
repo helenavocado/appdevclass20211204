@@ -37,7 +37,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+  </div>
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="/notes">Notes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/user_sign_in">Sign In</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/user_sign_up">Sign Up</a>
+  </li>
+  <%# <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li> %>
+</ul>
+
   <body>
+    <%if @current_user!=nil%>
+      Welcome back, <%=@current_user.email%>!
+      <%end%>
     <%= yield %>
   </body>
 </html>
